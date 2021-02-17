@@ -1,0 +1,22 @@
+template header
+description
+result
+
+package com.myspace.spreadsheet_decisiontable;
+
+import com.myspace.spreadsheet_decisiontable.ClientObject;
+
+template "classification-rules"
+description
+result
+
+rule "Categorize Objects_@{row.rowNumber}"
+no-loop true
+when
+    clientObject: ClientObject(descr matches @{description})
+then
+    clientObject.setPass(@{result});
+    System.out.println("@{result}");
+end
+
+end template
