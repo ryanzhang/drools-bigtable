@@ -1,0 +1,5 @@
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="template-db-KBase" default="true" packages="com.myspace.spreadsheet_decisiontable">
+        <ksession name="mykiesession" default="true" />
+    </kbase>
+</kmodule>
