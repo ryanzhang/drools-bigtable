@@ -33,7 +33,7 @@ public class App {
         KeywordReader kr = new KeywordReader("10kTable.xls");
         // ClientObject o2 = new ClientObject();
         // ClientObject o3 = new ClientObject();
-        o1.setDescr("DangerObject9999");
+        o1.setDescr("DangerObject99999");
         // o2.setDescr("DangerObject99");
         // o3.setDescr("DangerObject999");
 
@@ -52,7 +52,7 @@ public class App {
         start = System.currentTimeMillis();
         ClientObject o2 = new ClientObject();
 
-        o2.setDescr("DangerObject10000");
+        o2.setDescr("DangerObject100000");
         ksession.insert(o2);
         // ksession.insert(o2);
         // ksession.insert(o3);
@@ -60,13 +60,10 @@ public class App {
         // stop watch
         end = System.currentTimeMillis();
         // print the result
-        System.out.format("2second route fired rules: %d elapsed time: %d \n", fired, (end - start));
+        System.out.format("2second round fired rules: %d elapsed time: %d \n", fired, (end - start));
         System.out.println("Is Object Pass:" + o2.isPass());
 
-        // if (ksession != null) {
-        //     ksession.getFactHandles().forEach(f -> System.out.println(ksession.getObject(f)));
-        //     ksession.dispose();
-        // }
+
     }
 
     private static KieContainer getContainer() {
