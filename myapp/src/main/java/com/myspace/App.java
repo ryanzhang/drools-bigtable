@@ -1,6 +1,8 @@
 package com.myspace;
 
 import com.myspace.spreadsheet_decisiontable.ClientObject;
+import com.myspace.spreadsheet_decisiontable.Keyword;
+import com.myspace.spreadsheet_decisiontable.KeywordReader;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
@@ -28,6 +30,7 @@ public class App {
 
         start = System.currentTimeMillis();
         ClientObject o1 = new ClientObject();
+        KeywordReader kr = new KeywordReader("10kTable.xls");
         // ClientObject o2 = new ClientObject();
         // ClientObject o3 = new ClientObject();
         o1.setDescr("DangerObject9999");
@@ -35,16 +38,30 @@ public class App {
         // o3.setDescr("DangerObject999");
 
         ksession.insert(o1);
+        ksession.insert(kr);
         // ksession.insert(o2);
         // ksession.insert(o3);
 
         int fired = ksession.fireAllRules();
         // stop watch
         end = System.currentTimeMillis();
-
         // print the result
         System.out.format("fired rules: %d elapsed time: %d \n", fired, (end - start));
         System.out.println("Is Object Pass:" + o1.isPass());
+
+        start = System.currentTimeMillis();
+        ClientObject o2 = new ClientObject();
+
+        o2.setDescr("DangerObject10000");
+        ksession.insert(o2);
+        // ksession.insert(o2);
+        // ksession.insert(o3);
+        fired = ksession.fireAllRules();
+        // stop watch
+        end = System.currentTimeMillis();
+        // print the result
+        System.out.format("2second route fired rules: %d elapsed time: %d \n", fired, (end - start));
+        System.out.println("Is Object Pass:" + o2.isPass());
 
         // if (ksession != null) {
         //     ksession.getFactHandles().forEach(f -> System.out.println(ksession.getObject(f)));

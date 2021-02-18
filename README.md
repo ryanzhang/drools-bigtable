@@ -1,9 +1,10 @@
 # How to run
-Running rule from Excel format;
 
-Rule was parsed and run in Runtime via drools api;
 
 ```bash
+cd rules 
+mvn clean install
+cd ../myapp
 mvn clean compile exec:java
 #Output
 Initial Kie Session elapsed time: 12469 

@@ -1,0 +1,15 @@
+package com.myspace.spreadsheet_decisiontable
+import java.util.*
+import com.myspace.spreadsheet_decisiontable.KeywordReader
+
+rule "Load keyword"
+    when
+        $kr:KeywordReader(excelFile matches ".*.xls")
+    then
+        System.out.println("Load keyword rule fired");
+        List<Map<String, String>> list = $kr.getKwList();
+        for ( Map<String, String> m : list){
+            Keyword k = new Keyword(m.get("1"), Boolean.valueOf(m.get("2")));
+            insert(k);
+        }
+end

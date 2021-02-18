@@ -1,0 +1,11 @@
+package com.myspace.spreadsheet_decisiontable
+
+
+rule "Check Client Object"
+    when
+        $k:Keyword($v : value)
+        $c:ClientObject( descr matches $v )
+    then
+        $c.setPass($k.isResult());
+        System.out.println("Check Client Object fired");
+end
