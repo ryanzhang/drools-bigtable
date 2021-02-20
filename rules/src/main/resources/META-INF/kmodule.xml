@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.drools.org/xsd/kmodule">
-    <kbase name="DTableWithTemplateKB" packages="com.myspace.spreadsheet_decisiontable">
+    <!-- <kbase name="DTableWithTemplateKB1" packages="com.myspace.spreadsheet_decisiontable">
         <ruleTemplate dtable="com/myspace/spreadsheet_decisiontable/10kTable.xls"
                       template="com/myspace/spreadsheet_decisiontable/SimpleTemplate.drt"
                       row="2" col="2"/>
-        <ksession name="mykiesession"/>
-    </kbase>
+        <ksession name="mykiesession1"/>
+    </kbase> -->
+    <kbase name="DTableWithTemplateKB2" packages="com.myspace.spreadsheet_decisiontable">
+        <ruleTemplate dtable="com/myspace/spreadsheet_decisiontable/10kTable.xls"
+                      template="com/myspace/spreadsheet_decisiontable/SimpleTemplate.drt"
+                      row="2" col="2"/>
+        <ksession name="mykiesession2"/>
+    </kbase>    
 </kmodule>
