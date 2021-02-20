@@ -19,7 +19,11 @@ public class App {
 
     private void evaluateRules() throws InterruptedException {
         // get kie container
-        kieContainer = getContainer();
+        KieServices kieServices = KieServices.Factory.get();
+
+        // Retrieve the decision project (kjar) from classpath
+        KieContainer kieContainer = kieServices.getKieClasspathContainer();
+
 
         // start the stopwatch
         long start = System.currentTimeMillis();
@@ -55,17 +59,5 @@ public class App {
         ksession.halt();
         ksession.dispose();
         
-    }
-
-    private static KieContainer getContainer() {
-        KieServices kieServices = KieServices.Factory.get();
-
-        // Retrieve the decision project (kjar) from classpath
-        KieContainer kieContainer = kieServices.getKieClasspathContainer();
-
-        // Dynamically pull the decision project from Maven repo
-        // ReleaseId releaseId = kieServices.newReleaseId("com.myspace","spreadsheet-decisiontable", "1.0.0-SNAPSHOT");
-        // KieContainer kieContainer = kieServices.newKieContainer(releaseId);
-        return kieContainer;
     }
 }
