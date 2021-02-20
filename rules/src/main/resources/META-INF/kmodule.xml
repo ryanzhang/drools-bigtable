@@ -8,7 +8,7 @@
         <ksession name="mykiesession1"/>
     </kbase> -->
     <kbase name="DTableWithTemplateKB2" packages="com.myspace.spreadsheet_decisiontable">
-        <ruleTemplate dtable="com/myspace/spreadsheet_decisiontable/10kTable.xls"
+        <ruleTemplate dtable="com/myspace/spreadsheet_decisiontable/100kTable.xls"
                       template="com/myspace/spreadsheet_decisiontable/SimpleTemplate.drt"
                       row="2" col="2"/>
         <ksession name="mykiesession2"/>
