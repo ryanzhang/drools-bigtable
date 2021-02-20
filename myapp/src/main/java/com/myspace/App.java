@@ -19,9 +19,7 @@ public class App {
 
     private  void evaluateRules() {
         // get kie container
-        KieServices kieServices = KieServices.Factory.get();
-        // Retrieve the decision project (kjar) from classpath
-        KieContainer kieContainer = kieServices.getKieClasspathContainer();
+        KieContainer kieContainer = KieServices.Factory.get().getKieClasspathContainer();
 
         // start the stopwatch
         // KieContainer kieContainer = KieServices.Factory.get().getKieClasspathContainer();
