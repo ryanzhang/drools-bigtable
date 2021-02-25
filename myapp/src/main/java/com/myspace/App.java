@@ -32,17 +32,14 @@ public class App {
         ClientObject o1 = new ClientObject();
         KeywordReader kr = new KeywordReader("10kTable.xls");
         // KeywordReader kr = new KeywordReader("100kTable.xls");
-        // ClientObject o2 = new ClientObject();
-        // ClientObject o3 = new ClientObject();
+
         o1.setDescr("999");
         // o1.setDescr("50000");
-        // o2.setDescr("DangerObject99");
-        // o3.setDescr("DangerObject999");
+;
 
         ksession.insert(o1);
         ksession.insert(kr);
-        // ksession.insert(o2);
-        // ksession.insert(o3);
+
 
         int fired = ksession.fireAllRules();
         // stop watch
@@ -57,8 +54,7 @@ public class App {
         o2.setDescr("DangerObject9999");
         // o2.setDescr("DangerObject50001");
         ksession.insert(o2);
-        // ksession.insert(o2);
-        // ksession.insert(o3);
+
         fired = ksession.fireAllRules();
         // stop watch
         end = System.currentTimeMillis();

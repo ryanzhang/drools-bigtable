@@ -98,47 +98,6 @@ public class KeywordReader {
                 double num = 0;
                 index++;
                 rowData.put(String.valueOf(index), cell.getStringCellValue());
-
-                // // CellRangeAddress merged = getRangeIfMerged( cell,
-                // //                                             mergedRanges );
-                // // int mergedColStart = DataListener.NON_MERGED;
-                // switch ( cell.getCellTypeEnum() ) {
-                //     case BOOLEAN:
-                //     case FORMULA:
-                //         try {
-                //             newCell(listeners,
-                //                     i,
-                //                     cellNum,
-                //                     getFormulaValue( formatter, formulaEvaluator, cell ),
-                //                     mergedColStart);
-                //         } catch (RuntimeException e) {
-                //             // This is thrown if an external link cannot be resolved, so try the cached value
-                //             log.warn("Cannot resolve externally linked value: " + formatter.formatCellValue(cell));
-                //             String cachedValue = tryToReadCachedValue(cell);
-                //             newCell(listeners,
-                //                     i,
-                //                     cellNum,
-                //                     cachedValue,
-                //                     mergedColStart);
-                //         }
-                //         break;
-                //     case NUMERIC:
-                //         num = cell.getNumericCellValue();
-                //     default:
-                //         if (num - Math.round(num) != 0) {
-                //             newCell(listeners,
-                //                     i,
-                //                     cellNum,
-                //                     String.valueOf(num),
-                //                     mergedColStart);
-                //         } else {
-                //             newCell(listeners,
-                //                     i,
-                //                     cellNum,
-                //                     formatter.formatCellValue(cell),
-                //                     mergedColStart);
-                //         }
-                // }
             }
             kwList.add(rowData);
         }
